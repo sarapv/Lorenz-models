@@ -16,24 +16,24 @@ s2x = h/2;  % variance of the state noise
 s2y = 1;    % variance of the observation noise
 
 dx = 3;     % dimension of the state
-dy = 3;     % dimension of the observation
-
-idx_observed = 1:3; % which states are 'observed'
+idx_observed = [1,3]; % which states are 'observed'
+dy = length(idx_observed);     % dimension of the observation
 
 
 x = zeros(3,T);
 y = zeros(length(idx_observed),T);
 
 % initialization
-x(:,1)=sqrt(s2x)*randn(dx,1);
+xinit = [-5.91652, -5.52332, 24.5723].';
+x(:,1)=xinit + sqrt(s2x)*randn(dx,1);
 y(:,1)=x(idx_observed,1)+sqrt(s2y)*randn(dy,1);
 
 
 % Generating ground truth / synthetic data
 for t = 2:T
-   x(1,t) = x(1,t-1) + h * ( -s * (x(1,t-1) - x(2,t-1)) ) + sqrt(s2x)*randn ;
-   x(2,t) = x(2,t-1) + h * (r*x(1,t-1) - x(2,t-1) - (x(1,t-1)*x(3,t-1)) ) + sqrt(s2x)*randn ;
-   x(3,t) = x(3,t-1) + h * ( (-b * x(3,t-1)) + (x(1,t-1)*x(2,t-1)) ) + sqrt(s2x)*randn ;
+   x(1,t) = x(1,t-1) + h * ( -s * (x(1,t-1) - x(2,t-1)) ) + sqrt(s2x*h)*randn ;
+   x(2,t) = x(2,t-1) + h * (r*x(1,t-1) - x(2,t-1) - (x(1,t-1)*x(3,t-1)) ) + sqrt(s2x*h)*randn ;
+   x(3,t) = x(3,t-1) + h * ( (-b * x(3,t-1)) + (x(1,t-1)*x(2,t-1)) ) + sqrt(s2x*h)*randn ;
    
    if mod(t,Tobs)==1
       y(:,t)=x(idx_observed,t)+sqrt(s2y)*randn(dy,1); 
@@ -42,10 +42,11 @@ for t = 2:T
 end
 
 %% Figures
+
 figure(1),
-for i = idx_observed
+for i = 1:length(idx_observed)
     subplot(length(idx_observed),1,i),
-    plot(1:T,x(i,:),'k'), hold on, 
+    plot(1:T,x(idx_observed(i),:),'k'), hold on, 
     plot(1:Tobs:T,y(i,1:Tobs:end),'*')
 end
 legend('state','observations')
