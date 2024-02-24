@@ -1,9 +1,7 @@
 # State-Space models (SSMs)
 
 * stochastic Lorenz 96 model
-* stochastic Lorenz 63 model 
-
-test 
+* stochastic Lorenz 63 model
 
 
 # MIT License
