@@ -1,7 +1,17 @@
 # State-Space models (SSMs)
 
-* stochastic Lorenz 96 model
-* stochastic Lorenz 63 model
+* **Stochastic Lorenz 96 model** (available in Matlab, and Python) . This model is described by two types of state variables: slow-changing variables, $x$, and fast-changing 
+  variables, $z$. Both types of variables are coupled. Their ODEs (for simplicity we show the deterministic version here) 
+  are described by
+  
+  $$dx = $$
+ 
+  $$dz =  $$
+
+  We used this implementation for 
+  
+
+* **Stochastic Lorenz 63 model**. 
 
 
 # MIT License
