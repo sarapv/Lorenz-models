@@ -8,17 +8,27 @@
  
     $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z,$$
 
- where the elements of each function, $\boldsymbol{f}_x$ and $\boldsymbol{f}_z$, at a specific time step are
+    where the elements of each function, $\boldsymbol{f}_x$ and $\boldsymbol{f}_z$, at a specific time step are
 
-  $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l,$$
+    $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l,$$
 
-  $$f_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\lfloor \frac{l-1}{L} \rfloor}.$$
+    $$f_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\lfloor \frac{l-1}{L} \rfloor}.$$
 
-  Here, $F$, $H$, $C$ and $B$ are static parameters. The dynamic variables are assumed to be arranged on a circular structure.
-  We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
+    Here, $F$, $H$, $C$ and $B$ are static parameters. The dynamic variables are assumed to be arranged on a circular structure. 
+    We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
   
 
-* **Stochastic Lorenz 63 model**. 
+* **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional model, described by the SDES:
+    
+    $$ dx_1 = -S (x_1 - x_2) + \sigma dw_1, $$
+
+    $$ dx_2 = R x_1 - x_2 - x_1 x_3 + \sigma dw_2, $$
+
+    $$  dx_3 = x_1 x_2 - B x_3 + \sigma dw_3,$$
+    
+    where the $w_i$'s are independent 1-dimensional Wiener processes, $\sigma$ is the standard deviation of the state noise,
+    and $S$, $R$, and $B$ are static parameters. We used Euler integration to obtain a discrete-time version of the model 
+    (with integration step $h$).
 
 
 # MIT License
