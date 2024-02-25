@@ -1,4 +1,4 @@
-# State-Space models (SSMs)
+# State-space models (SSMs)
 
 * **Stochastic Lorenz 96 model** (available in Matlab, and Python) . This model is described by two types of state 
     variables: $d_x$-dimensional slow-changing variables, $\boldsymbol{x}$, and $d_z$-dimensional fast-changing 
@@ -8,7 +8,8 @@
  
     $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z,$$
 
-    where the elements of each function, $\boldsymbol{f}_x$ and $\boldsymbol{f}_z$, at a specific time step are
+    where the elements of each function, $\boldsymbol{f}_x = [ f_{x,1}, \ldots, f_{x,d_x}]^\top$ and 
+    $\boldsymbol{f}_z = [f_{z,1}, \ldots, f_{z,d_z} ]^\top$, at a specific time step are
 
     $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l,$$
 
