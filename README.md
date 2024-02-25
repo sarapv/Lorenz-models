@@ -4,15 +4,15 @@
     variables: $d_x$-dimensional slow-changing variables, $\boldsymbol{x}$, and $d_z$-dimensional fast-changing 
     variables, $\boldsymbol{z}$. Both types of variables are coupled. Their SDEs are described by
   
-    $$d\boldsymbol{x} = \boldsymbol{f}_x (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_x d\boldsymbol{w}_x$$, and
+    $$d\boldsymbol{x} = \boldsymbol{f}_x (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_x d\boldsymbol{w}_x,$$
  
-    $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z$$;
+    $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z,$$
 
  where the elements of each function, $\boldsymbol{f}_x$ and $\boldsymbol{f}_z$, at a specific time step are
 
-  $$  {f}_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l$$, and
+  $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l$$, and
 
-  $$  {f}_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\left\floor \frac{l-1}{L} \right\floor}$$.
+  $$f_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\left\floor \frac{l-1}{L} \right\floor}$$.
 
   Here, $F$, $H$, $C$ and $B$ are static parameters. The dynamic variables are assumed to be arranged on a circular structure.
   We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
