@@ -9,7 +9,7 @@
     $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z,$$
 
     where the elements of each function, $\boldsymbol{f}_x = [ f_{x,1}, \ldots, f_{x,D}]^\top$ and 
-    $\boldsymbol{f}_z = \[f_{z,1}, \ldots, f_{z,N}\]^\top$, at a specific time step are
+    $\boldsymbol{f}_z = \[ f_{z,1}, \ldots, f_{z,N} \]^\top$, at a specific time step are
 
     $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l,$$
 
