@@ -101,3 +101,5 @@ for i, idx in enumerate(idx_plotted_z):
         plt.legend()
 plt.suptitle('Fast state and observations')
 plt.show()
+
+
