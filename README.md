@@ -18,13 +18,13 @@
     We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
   
 
-* **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional model, described by the SDES:
+* **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional model, described by the SDEs:
     
-    $$ dx_1 = -S (x_1 - x_2) + \sigma dw_1, $$
+    $$dx_1 = -S (x_1 - x_2) + \sigma dw_1,$$
 
-    $$ dx_2 = R x_1 - x_2 - x_1 x_3 + \sigma dw_2, $$
+    $$dx_2 = R x_1 - x_2 - x_1 x_3 + \sigma dw_2,$$
 
-    $$  dx_3 = x_1 x_2 - B x_3 + \sigma dw_3,$$
+    $$dx_3 = x_1 x_2 - B x_3 + \sigma dw_3,$$
     
     where the $w_i$'s are independent 1-dimensional Wiener processes, $\sigma$ is the standard deviation of the state noise,
     and $S$, $R$, and $B$ are static parameters. We used Euler integration to obtain a discrete-time version of the model 
