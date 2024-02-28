@@ -31,6 +31,17 @@
     and $S$, $R$, and $B$ are static parameters. We used Euler integration to obtain a discrete-time version of the model 
     (with integration step $h$).
 
+# Some links
+
+* [Wikipedia page of the Lorenz system, with code in different programming languages](https://en.wikipedia.org/wiki/Lorenz_system)
+* [Integration of Lorenz 63 model with a 4th Runge Kutta method (instead of Euler-Maruyama) in Python](https://blog.stackademic.com/lorenz-63-system-integration-using-4th-order-runge-kutta-methods-in-python-778d7dbc44c1)
+* [The original paper of Edward N. Lorenz in the Journal of the Atmospheric Sciences, 1963](https://cdanfort.w3.uvm.edu/research/lorenz-1963.pdf)
+* [Wikipedia page for the Lorenz 96 system](https://en.wikipedia.org/wiki/Lorenz_96_model)
+* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model.](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3, to understand the physical meaning of the model.
+
+
+
+
 
 # MIT License
 
