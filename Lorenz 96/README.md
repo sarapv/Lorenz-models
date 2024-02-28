@@ -1,8 +1,8 @@
 We use the Euler-Maruyama scheme to integrate the SDEs of Lorenz 96 model. So the evolution of the state of the system is described, for $t=1,\ldots,T$, by
 
-$$x_{t+1} = x_t + h \boldsymbol{f}_x (x_t,z_t)  + \sqrt{h} \sigma_x w_{x,t},$$
+$$x_{t+1} = x_t + h f_x (x_t,z_t)  + \sqrt{h} \sigma_x w_{x,t},$$
  
-$$z_{t+1} = z_t + h \boldsymbol{f}_z (x_t,z_t) + \sqrt{h} \sigma_z w_{z,t},$$
+$$z_{t+1} = z_t + h f_z (x_t,z_t) + \sqrt{h} \sigma_z w_{z,t},$$
 
 where the the elements or components of functions $\boldsymbol{f}_x$ and $\boldsymbol{f}_z$ are
 
