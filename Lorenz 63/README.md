@@ -15,6 +15,6 @@ $$x_{3,t+1} = x_{3,t}   +  h (x_{1,t} x_{2,t} - B x_{3,t}) + \sqrt{h} \sigma w_{
 
 
 For more info:
-* [Wikipedia page with code in different languages](https://en.wikipedia.org/wiki/Lorenz_system)
-* [Integration of Lorenz 63 model with a 4th Runge Kutta method in Python](https://blog.stackademic.com/lorenz-63-system-integration-using-4th-order-runge-kutta-methods-in-python-778d7dbc44c1)
+* [Wikipedia page of the Lorenz system, with code in different programming languages](https://en.wikipedia.org/wiki/Lorenz_system)
+* [Integration of Lorenz 63 model with a 4th Runge Kutta method (instead of Euler-Maruyama) in Python](https://blog.stackademic.com/lorenz-63-system-integration-using-4th-order-runge-kutta-methods-in-python-778d7dbc44c1)
 * [The original paper of Edward N. Lorenz in the Journal of the Atmospheric Sciences, 1963](https://cdanfort.w3.uvm.edu/research/lorenz-1963.pdf)
