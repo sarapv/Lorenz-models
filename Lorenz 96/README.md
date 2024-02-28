@@ -22,4 +22,4 @@ for $j = 1, \ldots, d_x$ and $l = 1,\ldots, d_z$.
 
 For more info:
 * [Wikipedia page for the Lorenz 96 system](https://en.wikipedia.org/wiki/Lorenz_96_model)
-* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3.
+* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model.](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3, to understand the physical meaning of the model.
