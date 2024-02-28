@@ -1,25 +1,16 @@
 # Lorenz models
 
-* **Stochastic Lorenz 96 model** (available in Matlab, and Python) . This model is described by two types of state 
-    variables: $D$-dimensional slow-changing variables, $\boldsymbol{x}$, and $N$-dimensional fast-changing 
-    variables, $\boldsymbol{z}$. Both types of variables are coupled. Their SDEs are described by
+* **Stochastic Lorenz 96 model** (available in Matlab, and Python) . This model has two different versions: (1) the mono-scale model, and (2) the multi-scale model. 
+    
+  * The multi-scale model has two state variables, $x$ and $z$, of dimensions $d_x$ and $d_z$ respectively. 
+  While $x$ is a slow-changing variable, $z$ evolves fast in time. It also has four static parameters $F$, $H$, $C$ and $B$. 
+  * The mono-scale model is a simpler version of the previous one, ignoring the variable $z$ and the influence it has in $x$. The number of 
+  static parameters are also reduced, and there is only $F$.
+
+  The dimension of the model can be tuned, making it interesting to try algorithms and methodologies in higher dimensions.
+
   
-    $$d\boldsymbol{x} = \boldsymbol{f}_x (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_x d\boldsymbol{w}_x,$$
- 
-    $$d\boldsymbol{z} =  \boldsymbol{f}_z (\boldsymbol{x},\boldsymbol{z}) dt + \sigma_z d\boldsymbol{w}_z,$$
-
-    where the elements of each function, $\boldsymbol{f}_x$ and 
-    $\boldsymbol{f}_z$, at a specific time step are
-
-    $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j + F - \frac{HC}{B} \sum_{l=(j-1)L}^{Lj-1} z_l,$$
-
-    $$f_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\lfloor \frac{l-1}{L} \rfloor}.$$
-
-    Here, $F$, $H$, $C$ and $B$ are static parameters. The dynamic variables are assumed to be arranged on a circular structure. 
-    We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
-  
-  
-* **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional model, described by the SDEs:
+* **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional chaotic model, described by the SDEs:
     
     $$dx_1 = -S (x_1 - x_2) + \sigma dw_1,$$
 
@@ -28,8 +19,7 @@
     $$dx_3 = x_1 x_2 - B x_3 + \sigma dw_3,$$
     
     where the $w_i$'s are independent 1-dimensional Wiener processes, $\sigma$ is the standard deviation of the state noise,
-    and $S$, $R$, and $B$ are static parameters. We used Euler integration to obtain a discrete-time version of the model 
-    (with integration step $h$).
+    and $S$, $R$, and $B$ are static parameters. 
 
 # Some links
 
