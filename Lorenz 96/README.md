@@ -8,7 +8,7 @@ We use the **Euler-Maruyama scheme** with step-size $h$ to integrate the SDEs of
 
     for $j = 1, \ldots, d_x$.
 
-* ** The multi-scale version** describes the evolution of the two states of the system, for $t=1,\ldots,T$, by
+* **The multi-scale version** describes the evolution of the two states of the system, for $t=1,\ldots,T$, by
 
     $$x_{t+1} = x_t + h f_x (x_t,z_t)  + \sqrt{h} \sigma_x w_{x,t},$$
  
