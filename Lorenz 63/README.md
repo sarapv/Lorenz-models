@@ -1,2 +1,14 @@
 
-The parameters are usually set to $S = 10$, $B = \frac{8}{3}$ and $R = 28$, since the system exhibits chaotic behavior for these (and nearby) values.
+We use the Euler-Maruyama scheme to integrate the SDEs of Lorenz 63 model. So the state of the system is described by
+
+$$x_1(t+1) = x_1(t) - h S (x_1(t) - x_2(t)) + \sqrt{h} \sigma w_1 (t),$$
+
+$$x_2(t+1) = x_2(t+1)  + h (R x_1(t) - x_2(t) - x_1(t) x_3(t)) + \sqrt{h} \sigma w_2(t),$$
+
+$$x_3(t+1) = x_3(t)   +  h (x_1(t) x_2(t) - B x_3(t)) + \sqrt{h} \sigma w_3(t),$$
+
+* The parameters are usually set to $S = 10$, $B = \frac{8}{3}$ and $R = 28$, since the system exhibits chaotic behavior for these (and nearby) values.
+
+* The integration step $h$ has to be small enough (e.g., $h = 10^{-3}$) to not get inaccurate results in the discretization process. This might lead the model to explode. 
+
+* The $h$ is small, then the total number of time steps $T$ has to be big enough (e.g., $T = 10000$) to let the state evolve. 
