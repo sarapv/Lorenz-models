@@ -18,7 +18,7 @@
     Here, $F$, $H$, $C$ and $B$ are static parameters. The dynamic variables are assumed to be arranged on a circular structure. 
     We used Euler integration to obtain a discrete-time version of the model (with integration step $h$).
   
-
+  
 * **Stochastic Lorenz 63 model** (available in Matlab and Python). This is a 3-dimensional model, described by the SDEs:
     
     $$dx_1 = -S (x_1 - x_2) + \sigma dw_1,$$
