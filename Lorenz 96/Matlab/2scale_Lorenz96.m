@@ -15,8 +15,8 @@ fps = 10;               % no. of fast variables per slow variable
 nosc_fast = fps*nosc;   % no. of fast variables
 s2y = 4;                % variance of the observations: slow variables
 s2u = 1/10;             % variance of the observations: fast variables
-s2x = h/2;              % variance of the signal noise (slow variables)
-s2z = h/8;              % variance of the signal noise (fast variables)
+s2x = 1/2;              % variance of the signal noise (slow variables)
+s2z = 1/8;              % variance of the signal noise (fast variables)
 Tobs = 200;             % signals observed every Tobs time steps
 % Oobs_x = 2;             % we observe one every Oobs_x slow oscillators
 % Oobs_y = 5;             % we observe one every Oobs_y fast oscillators
@@ -34,27 +34,27 @@ while not(ok)
     for n = 2:NT
 
         % slow variables
-        x(1,n) = x(1,n-1) + h*( -x(nosc,n-1)*(x(nosc-1,n-1) - x(2,n-1)) - x(1,n-1) + F - ((H*C)/B)*sum(z(1:fps,n-1)) ) + sqrt(s2x)*randn;
-        x(2,n) = x(2,n-1) + h*( -x(1,n-1)*(x(nosc,n-1) - x(3,n-1)) - x(2,n-1) + F - ((H*C)/B)*sum(z(fps+(1:fps),n-1)) ) + sqrt(s2x)*randn;
+        x(1,n) = x(1,n-1) + h*( -x(nosc,n-1)*(x(nosc-1,n-1) - x(2,n-1)) - x(1,n-1) + F - ((H*C)/B)*sum(z(1:fps,n-1)) ) + sqrt(h*s2x)*randn;
+        x(2,n) = x(2,n-1) + h*( -x(1,n-1)*(x(nosc,n-1) - x(3,n-1)) - x(2,n-1) + F - ((H*C)/B)*sum(z(fps+(1:fps),n-1)) ) + sqrt(h*s2x)*randn;
 
         for i=3:nosc-1
-            x(i,n) = x(i,n-1) + h*( -x(i-1,n-1)*(x(i-2,n-1) - x(i+1,n-1)) - x(i,n-1) + F - ((H*C)/B)*sum(z((i-1)*fps+(1:fps),n-1)) ) + sqrt(s2x)*randn;
+            x(i,n) = x(i,n-1) + h*( -x(i-1,n-1)*(x(i-2,n-1) - x(i+1,n-1)) - x(i,n-1) + F - ((H*C)/B)*sum(z((i-1)*fps+(1:fps),n-1)) ) + sqrt(h*s2x)*randn;
         end %i
-        x(nosc,n) = x(nosc,n-1) + h*( -x(nosc-1,n-1)*(x(nosc-2,n-1) - x(1,n-1)) - x(nosc,n-1) + F - ((H*C)/B)*sum(z((nosc-1)*fps+(1:fps),n-1)) ) + sqrt(s2x)*randn;
+        x(nosc,n) = x(nosc,n-1) + h*( -x(nosc-1,n-1)*(x(nosc-2,n-1) - x(1,n-1)) - x(nosc,n-1) + F - ((H*C)/B)*sum(z((nosc-1)*fps+(1:fps),n-1)) ) + sqrt(h*s2x)*randn;
 
         
         % fast variables
         id_x = 1;
-        z(1,n) = z(1,n-1) + h*( C*B*z(2,n-1)*(z(nosc_fast,n-1) - z(3,n-1)) - C*z(1,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(s2z)*randn;
+        z(1,n) = z(1,n-1) + h*( C*B*z(2,n-1)*(z(nosc_fast,n-1) - z(3,n-1)) - C*z(1,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(h*s2z)*randn;
 
         for j = 2:nosc_fast-2
             id_x = 1 + floor(j/fps);
-            z(j,n) = z(j,n-1) + h*( C*B*z(j+1,n-1)*(z(j-1,n-1) - z(j+2,n-1)) - C*z(j,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(s2z)*randn;
+            z(j,n) = z(j,n-1) + h*( C*B*z(j+1,n-1)*(z(j-1,n-1) - z(j+2,n-1)) - C*z(j,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(h*s2z)*randn;
         end %j
         
         id_x = nosc;
-        z(nosc_fast-1,n) = z(nosc_fast-1,n-1) + h*( C*B*z(nosc_fast,n-1)*(z(nosc_fast-2,n-1) - C*z(1,n-1)) - z(nosc_fast-1,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(s2z)*randn;
-        z(nosc_fast,n) = z(nosc_fast,n-1) + h*( C*B*z(1,n-1)*(z(nosc_fast-1,n-1) - z(2,n-1)) - C*z(nosc_fast,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(s2z)*randn;
+        z(nosc_fast-1,n) = z(nosc_fast-1,n-1) + h*( C*B*z(nosc_fast,n-1)*(z(nosc_fast-2,n-1) - C*z(1,n-1)) - z(nosc_fast-1,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(h*s2z)*randn;
+        z(nosc_fast,n) = z(nosc_fast,n-1) + h*( C*B*z(1,n-1)*(z(nosc_fast-1,n-1) - z(2,n-1)) - C*z(nosc_fast,n-1) + F*C/B + (C*H/B)*x(id_x,n-1) ) + sqrt(h*s2z)*randn;
 
     end %n
     
