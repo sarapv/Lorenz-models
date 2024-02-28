@@ -1,6 +1,6 @@
 # Stochastic Lorenz 96 model
 
-We use the **Euler-Maruyama scheme** to integrate the SDEs of Lorenz 96 model. This model has two different versions: (1) the mono-scale and (2) the multi-scale version.
+We use the **Euler-Maruyama scheme** with step-size $h$ to integrate the SDEs of Lorenz 96 model. This model has two different versions: (1) the mono-scale and (2) the multi-scale version.
 
 * **The mono-scale version** describes the evolution of the system, for $t=1,\ldots,T$, by
 

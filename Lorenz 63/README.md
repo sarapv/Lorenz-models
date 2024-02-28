@@ -1,7 +1,7 @@
 
 # Stochastic Lorenz 63 model
 
-We use the **Euler-Maruyama scheme** to integrate the SDEs of Lorenz 63 model. So the evolution of the state of the system is described, for $t=1,\ldots,T$, by
+We use the **Euler-Maruyama scheme** with step-size $h$ to integrate the SDEs of Lorenz 63 model. So the evolution of the state of the system is described, for $t=1,\ldots,T$, by
 
 $$x_{1,t+1} = x_{1,t} - h S (x_{1,t} - x_{2,t}) + \sqrt{h} \sigma w_{1,t},$$
 
