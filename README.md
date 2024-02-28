@@ -1,4 +1,4 @@
-# State-space models (SSMs)
+# Lorenz models
 
 * **Stochastic Lorenz 96 model** (available in Matlab, and Python) . This model is described by two types of state 
     variables: $D$-dimensional slow-changing variables, $\boldsymbol{x}$, and $N$-dimensional fast-changing 
@@ -37,7 +37,7 @@
 * [Integration of Lorenz 63 model with a 4th Runge Kutta method (instead of Euler-Maruyama) in Python](https://blog.stackademic.com/lorenz-63-system-integration-using-4th-order-runge-kutta-methods-in-python-778d7dbc44c1)
 * [The original paper of Edward N. Lorenz in the Journal of the Atmospheric Sciences, 1963](https://cdanfort.w3.uvm.edu/research/lorenz-1963.pdf)
 * [Wikipedia page for the Lorenz 96 system](https://en.wikipedia.org/wiki/Lorenz_96_model)
-* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model.](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3, to understand the physical meaning of the model.
+* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model.](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3, to understand the physical meaning of the model. There is also a summary of Lorenz's life and achievements.
 
 
 
