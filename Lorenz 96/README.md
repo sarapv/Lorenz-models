@@ -19,3 +19,7 @@ for $j = 1, \ldots, d_x$ and $l = 1,\ldots, d_z$.
 * The integration step $h$ has to be small enough (e.g., $h = 10^{-4}$) to not get inaccurate results, otherwise the model might "explode". 
 
 * Once $h$ is small, then the total number of time steps $T$ has to be big enough (e.g., $T = 10000$) to let the state evolve. 
+
+For more info:
+* [Wikipedia page for the Lorenz 96 system](https://en.wikipedia.org/wiki/Lorenz_96_model)
+* [Thesis of van Kekem, Dirk Leendert: Dynamics of the Lorenz-96 model](https://pure.rug.nl/ws/portalfiles/portal/65106850/1_Introduction.pdf) I recommend to have a look at Figure 1.3.
