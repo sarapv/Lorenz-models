@@ -1,6 +1,6 @@
 We use the Euler-Maruyama scheme to integrate the SDEs of Lorenz 96 model. So the evolution of the state of the system is described, for $t=1,\ldots,T$, by
 
-    $$\boldsymbol{x}_{t+1} = \boldsymbol{x}_{t}$$
+$$\boldsymbol{x}_{t+1} = \boldsymbol{x}_{t}$$
 
 $$\boldsymbol{x}(t+1) = \boldsymbol{x}(t)+ h \boldsymbol{f}_x (\boldsymbol{x}(t),\boldsymbol{z}(t))  + \sqrt{h} \sigma_x \boldsymbol{w}_{x}(t),$$
  
@@ -12,7 +12,7 @@ $$f_{x,j} (\boldsymbol{x},\boldsymbol{z}) = - x_{j-1} (x_{j-2} - x_{j+1}) - x_j 
 
 $$f_{z,l} (\boldsymbol{x},\boldsymbol{z}) = -C B z_{l+1} (z_{l+2} - z_{l-1}) - C z_l + \frac{CF}{B} + \frac{HC}{B} x_{\lfloor \frac{l-1}{L} \rfloor},$$
 
-for $j = 1, \lotds, d_x$ and $l = 1,\ldots, d_z$.
+for $j = 1, \ldots, d_x$ and $l = 1,\ldots, d_z$.
 
 * An interesting characteristic of the Lorenz 96 model is that you get to **choose the dimension of the state**: $d_x$ and $d_z$. In this implementation we get $d_x = 20$ and $d_z = 10 d_x = 200$.
 
