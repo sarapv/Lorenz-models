@@ -1,11 +1,11 @@
 
 We use the Euler-Maruyama scheme to integrate the SDEs of Lorenz 63 model. So the state of the system is described by
 
-$$x_1(t+1) = x_1(t) - h S (x_1(t) - x_2(t)) + \sqrt{h} \sigma w_1 (t),$$
+$$x_{1,t+1} = x_{1,t} - h S (x_{1,t} - x_{2,t}) + \sqrt{h} \sigma w_{1,t},$$
 
-$$x_2(t+1) = x_2(t+1)  + h (R x_1(t) - x_2(t) - x_1(t) x_3(t)) + \sqrt{h} \sigma w_2(t),$$
+$$x_{2,t+1} = x_{2,t}  + h (R x_{1,t} - x_{2,t} - x_{1,t} x_{3,t}) + \sqrt{h} \sigma w_{2,t},$$
 
-$$x_3(t+1) = x_3(t)   +  h (x_1(t) x_2(t) - B x_3(t)) + \sqrt{h} \sigma w_3(t),$$
+$$x_{3,t+1} = x_{3,t}   +  h (x_{1,t} x_{2,t} - B x_{3,t}) + \sqrt{h} \sigma w_{3,t},$$
 
 * The parameters are usually set to $S = 10$, $B = \frac{8}{3}$ and $R = 28$, since the system exhibits chaotic behavior for these (and nearby) values.
 
